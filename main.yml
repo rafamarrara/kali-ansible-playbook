@@ -1,0 +1,8 @@
+---
+- name: "Kali Ansible playbook"
+  hosts: localhost
+  connection: local
+  roles:
+    - role: "roles/install-tools"
+      users:
+        - username: "{{ ansible_user_id }}"
