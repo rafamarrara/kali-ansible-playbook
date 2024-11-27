@@ -4,7 +4,7 @@ This repo is my effort keep an ansible playbook to quickly install/config Kali V
 
 ## Prep
 
-1. Install and enable SSH service
+### Install and enable SSH service
 
 Install SSH, start its service and enable it to start at boot.
 
@@ -15,7 +15,7 @@ sudo systemctl enable ssh
 sudo systemctl status ssh
 ```
 
-2. Config SSH
+### Config SSH
 
 Copy SSH Keys to host
 
@@ -31,7 +31,7 @@ chmod 600 ~/.ssh/id_rsa
 
 Config SSH to use your SSH key to github.
 
-Edit ssh config file `~/.ssh/config` and add the following entry.
+Edit ssh config file `~/.ssh/config` and add the following entry:
 
 ```bash
 # GitHub
