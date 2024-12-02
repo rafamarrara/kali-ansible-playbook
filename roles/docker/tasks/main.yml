@@ -1,0 +1,36 @@
+---
+- name: "Install Docker IO (Ubuntu)"
+  package:
+    name:
+      - docker.io
+    state: latest
+  become: true
+  become_method: sudo
+
+- name: Add user to docker group
+  user:
+    name: "{{ ansible_user_id }}"
+    groups: docker
+    append: yes
+
+- name: Ensure Docker is started and enabled at boot
+  systemd:
+    name: docker
+    state: started
+    enabled: yes
+
+- name: Increase max_map_count kernel parameter
+  sysctl:
+    name: vm.max_map_count
+    value: 262144
+    state: present
+    reload: yes
+  become: yes
+
+- name: Increase fs.file-max
+  sysctl:
+    name: fs.file-max
+    value: 1048576
+    state: present
+    reload: yes
+  become: yes
