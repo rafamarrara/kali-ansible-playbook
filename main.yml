@@ -2,8 +2,9 @@
 - name: "Kali Ansible playbook"
   hosts: localhost
   connection: local
+  vars:
+    users:
+      - username: "{{ ansible_user_id }}"
   roles:
-    - install-tools
-    - docker
-      users:
-        - username: "{{ ansible_user_id }}"
+    - role: "roles/install-tools"
+    - role: "roles/docker"
