@@ -2,7 +2,9 @@
 # Playbook for Kali
 
 # Update Kali and deploy packages
-- hosts: all
+- name: "Kali Packages playbook"
+  hosts: localhost
+  connection: local
   become: true
   tasks:
     - name: Configure apt to use Cloudflare mirror
