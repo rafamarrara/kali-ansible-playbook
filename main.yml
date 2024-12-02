@@ -8,3 +8,6 @@
   roles:
     - role: "roles/install-tools"
     - role: "roles/docker"
+
+- name: Include Kali packages playbook
+  ansible.builtin.import_playbook: kali-packages.yml

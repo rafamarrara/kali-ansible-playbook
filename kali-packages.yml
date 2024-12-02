@@ -1,0 +1,27 @@
+---
+# Playbook for Kali
+
+# Update Kali and deploy packages
+- hosts: all
+  become: true
+  tasks:
+    - name: Configure apt to use Cloudflare mirror
+      ansible.builtin.replace:
+        path: /etc/apt/sources.list
+        regexp: '^(deb\s+)http://([A-Za-z0-9.-]+)(/kali.*)$'
+        replace: '\1http://kali.download\3'
+
+    - name: Install apt packages to support HTTPS repos
+      ansible.builtin.apt:
+        name:
+          - apt-transport-https
+          - apt-utils
+          - ca-certificates
+        state: present
+        update_cache: true
+
+    - name: Configure apt to use HTTPS for Kali repo
+      ansible.builtin.replace:
+        path: /etc/apt/sources.list
+        regexp: '^(deb\s+)http://(.*)$'
+        replace: '\1https://\2'
