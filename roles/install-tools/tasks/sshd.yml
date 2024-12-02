@@ -11,6 +11,7 @@
 - name: Import GitHub SSH keys for user
   ansible.builtin.command: ssh-import-id-gh {{ github_user }}
   remote_user: "{{ ansible_user_id }}"
+  become: false
 
 - name: Ensure OpenSSH Server is started and enabled at boot
   systemd:
