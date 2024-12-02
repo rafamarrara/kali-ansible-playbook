@@ -15,6 +15,6 @@
 
 - name: Ensure OpenSSH Server is started and enabled at boot
   systemd:
-    name: docker
+    name: ssh
     state: started
     enabled: yes

@@ -12,6 +12,7 @@
     name: "{{ ansible_user_id }}"
     groups: docker
     append: yes
+  become: false
 
 - name: Ensure Docker is started and enabled at boot
   systemd:
