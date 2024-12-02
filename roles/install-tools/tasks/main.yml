@@ -1,3 +1,6 @@
 # tasks file for install-tools
 ---
-- include_tasks: apt-stuff.yml
+- include_tasks: apt-config.yml
+- include_tasks: apt-install.yml
+- include_tasks: sshd.yml
+- include_tasks: docker.yml

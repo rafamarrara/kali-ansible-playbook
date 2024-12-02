@@ -7,8 +7,4 @@
     users:
       - username: "{{ ansible_user_id }}"
   roles:
-    - role: "roles/install-tools"
-    - role: "roles/docker"
-
-- name: Include Kali packages playbook
-  ansible.builtin.import_playbook: kali-packages.yml
+    - install-tools

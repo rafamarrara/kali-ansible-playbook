@@ -21,3 +21,7 @@
     state: latest
   become: true
   become_method: sudo
+
+- name: Remove unnecessary packages
+  apt:
+    autoremove: true

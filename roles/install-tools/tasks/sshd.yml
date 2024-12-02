@@ -1,0 +1,19 @@
+---
+- name: "Install OpenSSH Server"
+  package:
+    name:
+      - openssh-server
+      - ssh-import-id
+    state: latest
+  become: true
+  become_method: sudo
+
+- name: Import GitHub SSH keys for user
+  ansible.builtin.command: ssh-import-id-gh {{ github_user }}
+  remote_user: "{{ ansible_user_id }}"
+
+- name: Ensure OpenSSH Server is started and enabled at boot
+  systemd:
+    name: docker
+    state: started
+    enabled: yes
