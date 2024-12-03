@@ -54,6 +54,13 @@
   become: true
   become_method: sudo
 
+- name: Add current user to docker group
+  user:
+    name: "{{ ansible_env.SUDO_USER }}"
+    groups: docker
+    append: yes
+  become: true
+
 - name: Increase max_map_count kernel parameter
   sysctl:
     name: vm.max_map_count

@@ -1,0 +1,16 @@
+- name: Debugging users running Ansible
+  block:
+  - name: Show ansible_user_id
+    debug:
+      var: ansible_user_id
+    become: false
+
+  - name: Show ansible_user_idenv.USER
+    debug:
+      var: ansible_env.USER
+    become: false
+
+  - name: Show original user (SUDO_USER)
+    debug:
+      var: ansible_env.SUDO_USER
+    become: false

@@ -4,3 +4,6 @@
 - include_tasks: apt-install.yml
 - include_tasks: sshd.yml
 - include_tasks: docker.yml
+
+# Debug
+#- include_tasks: debug.yml
