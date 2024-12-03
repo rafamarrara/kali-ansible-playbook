@@ -9,9 +9,9 @@
 - name: Install apt packages to support HTTPS repos
   package:
     name:
-      - apt-transport-https
       - apt-utils
       - ca-certificates
+      - apt-transport-https
     state: latest
   become: true
   become_method: sudo

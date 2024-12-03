@@ -1,3 +1,7 @@
 ---
 # GitHub user for SSH Keys
 github_user: rafamarrara
+
+# Kali Debian Distro - Docker install
+# https://www.kali.org/docs/containers/installing-docker-on-kali/
+kali_debian_distro: bookworm
