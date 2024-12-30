@@ -12,6 +12,13 @@ if ! command -v ansible >/dev/null; then
     fi
 fi
 
+printf "[+] Install Ansible role requirements\n"
+ansible-galaxy install -r requirements.yml
+if [ $? -gt 0 ]; then
+    printf "[!] Error occurred during Ansible requirements installation.\n"
+    exit 1
+fi
+
 printf "[+] Running Ansible playbooks\n"
 ansible-playbook -i inventory --ask-become-pass main.yml
 if [ $? -gt 0 ]; then
