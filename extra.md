@@ -1,6 +1,7 @@
 # Extra
 
 Some extra commands that may be helpful.
+Also some info from my previous attempt to document my Kali preferences - [Link](https://github.com/rafamarrara/CTFs/blob/main/kaliInstallation.md)
 
 ## Prep
 
