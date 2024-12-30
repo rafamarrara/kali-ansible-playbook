@@ -40,6 +40,19 @@ Host github.com
     IdentitiesOnly yes
 ```
 
+```bash
+$ ssh git@github.com
+The authenticity of host 'github.com (140.82.112.3)' can't be established.
+EDXXXXX key fingerprint is SHA256:+XxXXxXXxxXX/xXxXxXxXxx.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'github.com' (EDXXXXX) to the list of known hosts.
+Enter passphrase for key '/home/user/.ssh/id_rsa':
+PTY allocation request failed on channel 0
+Hi User! You've successfully authenticated, but GitHub does not provide shell access.
+Connection to github.com closed.
+```
+
 ## Ansible useful commands
 
 ### Create role structure
