@@ -5,6 +5,7 @@
 - include_tasks: sshd.yml
 - include_tasks: docker.yml
 - include_tasks: apt-brave.yml
+- include_tasks: config-burp-cert-firefox.yml
 
 # Debug
 #- include_tasks: debug.yml
